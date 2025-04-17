@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>{% block title %}{% endblock %} - LEDEN</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='favicon.ico') }}">
+    {% block styles %}
+        {{ bootstrap.load_css() }}
+    {% endblock %}
+    <style>
+        .custom-btn {
+        background-color: #D04018;
+        color: #292B5A;}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav bg-black">
+            <li class="nav-item">
+                <a class="nav-link link-light" href="/">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-light" href="/transfer">打印任务</a>
+            </li>
+            <li class="nav-item">
+                <a href="http://www.leden.net.cn/" class="nav-link link-light" target="_blank">About</a>
+            </li>
+        </ul>
+
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% block scripts %}
+        {{ bootstrap.load_js() }}
+    {% endblock %}
+</body>
+</html>

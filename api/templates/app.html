@@ -1,0 +1,27 @@
+{% extends "motherboard.html" %}
+{% block content %}
+<h2 class="text-center">云打印任务指令</h2>
+<form action="" method="post" class="row g-3" style="padding-left: 200px; margin-top: 50px;">
+    {{ form.hidden_tag() }}
+    <div class="col-auto">
+        <div class="form-label">{{ form.title.label }} </div>{{ form.title }}
+    </div>
+    <div class="col-auto">
+        <div class="form-label">{{ form.content1.label }} </div>{{ form.content1 }}
+        <div class="form-label">{{ form.content2.label }} </div>{{ form.content2 }}
+        <div class="form-label">{{ form.content3.label }} </div>{{ form.content3 }}
+        <div class="form-label">{{ form.content4.label }} </div>{{ form.content4 }}
+    </div>  
+    
+    <div class="col-auto">
+        <em>RFID：</em><br>
+        <div class="mt-2">
+            {{ form.type.label }}{{ form.type }} {{ form.length.label }}{{ form.length }}
+        </div>
+    </div>
+    <div class="col-auto">
+        <div class="form-label">{{ form.qr.label }} </div>{{ form.qr }}
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg custom-btn" style="width: 50px;">发送</button>
+</form>
+{% endblock %}
